@@ -6,33 +6,59 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
+  ScrollView,
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Post from './src/components/Post';
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  state = {
+    posts: [
+      {
+        title: 'Aprendendo GoNative',
+        author: 'Vlamir Santo',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+      },
+      {
+        title: 'Aprendendo GoNative',
+        author: 'Vlamir Santo',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+      },
+      {
+        title: 'Aprendendo GoNative',
+        author: 'Vlamir Santo',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+      },
+      {
+        title: 'Aprendendo GoNative',
+        author: 'Vlamir Santo',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+      },
+      {
+        title: 'Aprendendo GoNative',
+        author: 'Vlamir Santo',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+      },
+      {
+        title: 'Aprendendo GoNative',
+        author: 'Vlamir Santo',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+      },
+    ],
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <View style={styles.header}>
+          <Text style={styles.headerTxt}>GoNative App</Text>
+        </View>
+        <ScrollView style={styles.contentPost}>
+          {this.state.posts.map((item, key) => <Post key={key} data={item} />)}
+        </ScrollView>
       </View>
     );
   }
@@ -41,18 +67,20 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#EE7777',
+  },
+  header: {
+    paddingVertical: 20,
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  headerTxt: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  contentPost: {
+    paddingHorizontal: 20,
+    marginBottom: 20,
   },
 });
