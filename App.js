@@ -11,7 +11,7 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-
+import './src/config/ReactotronConfig';
 import Post from './src/components/Post';
 
 export default class App extends Component {
