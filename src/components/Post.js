@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
-export default class Post extends Component {
-  render() {
+export default class Post extends Component
+{
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  };
+
+  render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{this.props.data.title}</Text>
-        <Text style={styles.author}>{this.props.data.author}</Text>
-        <View style={styles.post}>
-          <Text style={styles.text}>{this.props.data.text}</Text>
-        </View>
+      <Text style={styles.title}>{this.props.data.title}</Text>
+      <Text style={styles.author}>{this.props.data.author}</Text>
+      <View style={styles.post}>
+        <Text style={styles.text}>{this.props.data.text}</Text>
       </View>
+    </View>
     )
   }
 }
