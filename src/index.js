@@ -22,37 +22,37 @@ export default class App extends Component {
         id: 1,
         title: 'Aprendendo GoNative',
         author: 'Vlamir Santo',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.',
       },
       {
         id: 2,
         title: 'Aprendendo GoNative',
         author: 'Vlamir Santo',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.',
       },
       {
         id: 3,
         title: 'Aprendendo GoNative',
         author: 'Vlamir Santo',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.',
       },
       {
         id: 4,
         title: 'Aprendendo GoNative',
         author: 'Vlamir Santo',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.',
       },
       {
         id: 5,
         title: 'Aprendendo GoNative',
         author: 'Vlamir Santo',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.',
       },
       {
         id: 6,
         title: 'Aprendendo GoNative',
         author: 'Vlamir Santo',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ex justo. Proin aliquet tempus risus, sed faucibus lacus vulputate nec. In suscipit consectetur porttitor.',
       },
     ],
   };
@@ -64,7 +64,7 @@ export default class App extends Component {
           <Text style={styles.headerTxt}>GoNative App</Text>
         </View>
         <ScrollView style={styles.contentPost}>
-          {this.state.posts.map((item, key) => <Post key={item.id} data={item} />)}
+          {this.state.posts.map(item => <Post key={item.id} data={item} />)}
         </ScrollView>
       </View>
     );

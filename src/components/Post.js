@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class Post extends Component
-{
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  };
-
-  render(){
-    return (
-      <View style={styles.container}>
-      <Text style={styles.title}>{this.props.data.title}</Text>
-      <Text style={styles.author}>{this.props.data.author}</Text>
-      <View style={styles.post}>
-        <Text style={styles.text}>{this.props.data.text}</Text>
-      </View>
+const Post = props => (
+  <View style={styles.container}>
+    <Text style={styles.title}>{props.data.title}</Text>
+    <Text style={styles.author}>{props.data.author}</Text>
+    <View style={styles.post}>
+      <Text style={styles.text}>{props.data.text}</Text>
     </View>
-    )
-  }
-}
+  </View>
+);
+
+Post.PropTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    author: PropTypes.string,
+    text: PropTypes.string,
+  }).isRequired(),
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -50,5 +47,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#666666',
     fontSize: 14,
-  }
+  },
 });
+
+export default Post;
